@@ -14,7 +14,7 @@ A Chrome extension to enhance your browsing experience by exporting data from Op
 1. **Clone or Download the Repository**
    - Click the green "Code" button on GitHub and select "Download ZIP", or clone with:
      ```
-     git clone [https://github.com/yourusername/openrouter-exporter.git](https://github.com/AppleLamps/Open-Router-Export.git)
+     git clone https://github.com/AppleLamps/Open-Router-Export.git
      ```
 
 2. **Load the Extension in Chrome**
