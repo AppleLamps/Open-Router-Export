@@ -3,7 +3,7 @@
 /* Reset and base styles */
 body {
   min-width: 320px;
-  min-height: 100vh;
+  /* Removed min-height: 100vh; */
   margin: 0;
   padding: 0;
   font-family: 'Inter', Arial, sans-serif;
@@ -22,16 +22,18 @@ body {
 .popup-card {
   position: relative;
   z-index: 1;
-  margin: 32px auto;
-  padding: 28px 22px 18px 22px;
+  margin: 12px auto;
+  padding: 18px 16px 12px 16px;
   max-width: 340px;
-  border-radius: 16px;
+  max-height: 98vh;
+  border-radius: 14px;
   background: #fff;
   box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
   border: 1px solid #e5e7eb;
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  overflow-y: auto;
 }
 
 /* Header */
@@ -166,14 +168,14 @@ input[type="date"]:focus {
 
 /* Status card */
 .status-card {
-  margin-top: 16px;
-  padding: 12px 14px;
-  border-radius: 10px;
+  margin-top: 12px;
+  padding: 10px 10px;
+  border-radius: 8px;
   background: #f3f4f6;
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.04);
-  font-size: 1rem;
+  font-size: 0.98rem;
   color: #23233a;
-  min-height: 24px;
+  min-height: 20px;
   min-width: 80px;
   text-align: center;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
@@ -203,14 +205,15 @@ input[type="date"]:focus {
 /* Responsive */
 @media (max-width: 400px) {
   .popup-card {
-    margin: 8px;
-    padding: 12px 4px 8px 4px;
+    margin: 4px;
+    padding: 8px 2px 6px 2px;
     max-width: 98vw;
+    max-height: 98vh;
   }
   .popup-header {
     gap: 6px;
   }
   .popup-section {
-    padding: 10px 4px 8px 4px;
+    padding: 8px 2px 6px 2px;
   }
 }

@@ -15,6 +15,23 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     runExportFromStorage();
     sendResponse({ success: true, started: true });
     return true;
+  } else if (request.action === 'getExportStatus') {
+    // Respond with current export status from localStorage
+    const active = localStorage.getItem('or_export_active') === 'true';
+    const startPage = parseInt(localStorage.getItem('or_export_startPage') || '0', 10);
+    const endPage = parseInt(localStorage.getItem('or_export_endPage') || '0', 10);
+    const currentPage = parseInt(localStorage.getItem('or_export_currentPage') || '0', 10);
+    const allData = JSON.parse(localStorage.getItem('or_export_data') || '[]');
+    const skippedRows = parseInt(localStorage.getItem('or_export_skipped') || '0', 10);
+    sendResponse({
+      active,
+      startPage,
+      endPage,
+      currentPage,
+      records: allData.length,
+      skippedRows
+    });
+    return true;
   }
 });
 

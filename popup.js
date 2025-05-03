@@ -6,6 +6,33 @@ document.addEventListener('DOMContentLoaded', function() {
   const endPageInput = document.getElementById('endPage');
   const spinner = document.getElementById('exportSpinner');
 
+  // On popup open, request current export status from content script
+  chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+    const tab = tabs[0];
+    if (tab && tab.url && tab.url.includes('openrouter.ai/activity')) {
+      chrome.tabs.sendMessage(
+        tab.id,
+        { action: 'getExportStatus' },
+        (response) => {
+          if (chrome.runtime.lastError) {
+            // Ignore errors if content script is not injected
+            return;
+          }
+          if (response && response.active) {
+            // Export in progress, show current progress
+            setStatus(
+              `Resuming export: Page ${response.currentPage} of ${response.endPage}. Records exported: ${response.records}, skipped: ${response.skippedRows}.`,
+              'progress'
+            );
+            if (spinner) spinner.style.display = 'inline-flex';
+            exportButton.disabled = true;
+            exportButton.classList.add('loading');
+          }
+        }
+      );
+    }
+  });
+
   // Helper to set status with animation and color
   function setStatus(message, type) {
     statusDiv.textContent = message;
