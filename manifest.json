@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "OpenRouter Activity Exporter",
+  "version": "1.0",
+  "description": "Export OpenRouter activity data to CSV",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://openrouter.ai/activity*",
+        "https://openrouter.ai/activity/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}

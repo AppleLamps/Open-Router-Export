@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* Reset and base styles */
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  background: #f7f7fa;
+  color: #23233a;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Remove glassmorphism background */
+.popup-bg {
+  display: none;
+}
+
+/* Main card style */
+.popup-card {
+  position: relative;
+  z-index: 1;
+  margin: 32px auto;
+  padding: 28px 22px 18px 22px;
+  max-width: 340px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Header */
+.popup-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.popup-logo svg {
+  display: block;
+  /* Remove colored drop-shadow for a cleaner look */
+  filter: none;
+}
+
+.popup-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #23233a;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+/* Section/card */
+.popup-section {
+  margin-bottom: 18px;
+  padding: 18px 16px 12px 16px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.04);
+  border: 1px solid #e5e7eb;
+  transition: box-shadow 0.2s;
+}
+
+.popup-section:focus-within,
+.popup-section:hover {
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+}
+
+/* Section title */
+h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.05rem;
+  color: #2563eb;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Row layout */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+label {
+  font-size: 0.98rem;
+  color: #4b5563;
+  font-weight: 500;
+  flex: 1 0 90px;
+}
+
+/* Inputs */
+input[type="number"],
+input[type="date"] {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1.5px solid #e5e7eb;
+  background: #fff;
+  color: #23233a;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: none;
+  min-width: 0;
+}
+
+input[type="number"]:focus,
+input[type="date"]:focus {
+  border: 1.5px solid #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.10);
+}
+
+/* Export button */
+.export-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 0;
+  margin: 10px 0 0 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #fff;
+  background: #2563eb;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px 0 rgba(37,99,235,0.10);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  position: relative;
+  overflow: hidden;
+}
+
+.export-btn:hover,
+.export-btn:focus {
+  background: #1d4ed8;
+  box-shadow: 0 2px 8px 0 rgba(37,99,235,0.16);
+  transform: translateY(-1px) scale(1.01);
+}
+
+.export-btn-icon svg {
+  display: block;
+  filter: none;
+}
+
+.export-btn-spinner {
+  display: flex;
+  align-items: center;
+  margin-left: 4px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Status card */
+.status-card {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #f3f4f6;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.04);
+  font-size: 1rem;
+  color: #23233a;
+  min-height: 24px;
+  min-width: 80px;
+  text-align: center;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  word-break: break-word;
+  opacity: 0.98;
+  border: 1px solid #e5e7eb;
+}
+
+.status-card.success {
+  background: #e0f7ec;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+.status-card.error {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+
+.status-card.progress {
+  background: #e0e7ff;
+  color: #3730a3;
+  border-color: #c7d2fe;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .popup-card {
+    margin: 8px;
+    padding: 12px 4px 8px 4px;
+    max-width: 98vw;
+  }
+  .popup-header {
+    gap: 6px;
+  }
+  .popup-section {
+    padding: 10px 4px 8px 4px;
+  }
+}

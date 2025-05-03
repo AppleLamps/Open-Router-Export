@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OpenRouter Activity Exporter</title>
+  <meta name="viewport" content="width=320, initial-scale=1.0">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-card">
+    <header class="popup-header">
+      <span class="popup-logo" aria-label="OpenRouter Logo">
+        <!-- Minimalistic SVG icon -->
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="14" fill="#2563eb" opacity="0.9"/>
+          <path d="M10 16h12M16 10v12" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <h2 class="popup-title">OpenRouter Activity Exporter</h2>
+    </header>
+
+    <section class="popup-section" aria-labelledby="page-range-title">
+      <h3 id="page-range-title">Page Range</h3>
+      <div class="row">
+        <label for="startPage">Start Page</label>
+        <input type="number" id="startPage" min="1" value="1" aria-label="Start Page">
+      </div>
+      <div class="row">
+        <label for="endPage">End Page</label>
+        <input type="number" id="endPage" min="1" value="5" aria-label="End Page">
+      </div>
+    </section>
+
+
+    <button id="exportButton" class="export-btn" aria-label="Export to CSV">
+      <span class="export-btn-icon">
+        <!-- Export SVG icon -->
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 3v10M10 13l-3-3m3 3l3-3" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          <rect x="3" y="15" width="14" height="2" rx="1" fill="#fff" opacity="0.7"/>
+        </svg>
+      </span>
+      <span class="export-btn-text">Export to CSV</span>
+      <span class="export-btn-spinner" id="exportSpinner" aria-hidden="true" style="display:none;">
+        <!-- Simple spinner SVG -->
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="7" stroke="#fff" stroke-width="2" opacity="0.3"/>
+          <path d="M16 9a7 7 0 1 1-7-7" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </button>
+
+    <div id="status" class="status-card" aria-live="polite"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
