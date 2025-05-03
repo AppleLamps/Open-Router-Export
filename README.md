@@ -1,4 +1,4 @@
-# OpenRouter Exporter
+# OpenRouter Exporter by @lamps_apple
 
 A Chrome extension to enhance your browsing experience by exporting data from OpenRouter or related web applications. This extension provides a simple popup interface and content script to interact with web pages and export relevant information.
 
@@ -14,7 +14,7 @@ A Chrome extension to enhance your browsing experience by exporting data from Op
 1. **Clone or Download the Repository**
    - Click the green "Code" button on GitHub and select "Download ZIP", or clone with:
      ```
-     git clone https://github.com/yourusername/openrouter-exporter.git
+     git clone [https://github.com/yourusername/openrouter-exporter.git](https://github.com/AppleLamps/Open-Router-Export.git)
      ```
 
 2. **Load the Extension in Chrome**
@@ -39,4 +39,4 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ## License
 
-[MIT](LICENSE) (add a LICENSE file if needed)
+[MIT](LICENSE) 
